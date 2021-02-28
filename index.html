@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>CSE 578 - Fall 2020 - Homework #6</title>
+        <script src='https://d3js.org/d3.v5.min.js'></script>
+        <style>
+            h1{
+            text-align:center;
+            color: rgb(92, 88, 88);
+            }
+            h2{
+                text-align:center;
+                color:  rgb(92, 88, 88);
+            }
+            h3{
+                text-align:center;
+                color: rgb(92, 88, 88);
+            }
+            h4{
+                text-align: justify;
+                color:  rgb(92, 88, 88);
+            }
+                #chart1, #chart2 {
+            float: left;
+            width: 49%;
+            }
+            #chart1 {
+                border:  1px solid #313639;
+                border-radius: 2px;
+                height: 587px;
+                width: 665px;
+                margin: 30px;
+                margin-top: 25px;
+                margin-left: 40px;
+                position: relative;
+                float: left;
+                background: rgb(247, 215, 215);
+            }
+
+            #chart2 {
+                border:  1px solid #313639;
+                border-radius: 2px;
+                height: 587px;
+                width: 665px;
+                margin-top: 25px;
+                position: relative;
+                background: #e6e9b3;
+            }
+
+            #main_svg {
+                border-radius: 2px;
+                height: 550px;
+                margin-left: 100px;
+                position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-58%);
+            -ms-transform: translateX(-58%);
+            transform: translateX(-58%);
+            }
+
+            h2 {
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .bar { fill: steelblue; }
+            
+            .tick text{
+                font-size: 0.7em;
+            }
+            .text1{
+                font-size: 0.45em;
+                text-anchor: middle;
+                font-family:Calibri;
+                font-weight: bold;
+            }
+            rect:hover {
+            fill:#606470;
+            cursor: pointer;
+            }
+        .tooltip {
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dae1e7;
+            padding: 10px;
+            border: 3px solid white;
+            box-shadow: 0 0px 10px black;
+        }
+    </style>
+    </head>
+    <body style="background-color: #faf8f3 ;text-align:center">
+        <h1>Homework #6: Argumentative Visualization</h1>
+        <h2>Sai Teja Vishal Jangala - sjangala@asu.edu - 1218332037</h2>
+        <hr style='width:100%'>
+        <h1>Visualizing US Elections Voters' Turnout</h1>
+        <hr style='width:100%'>
+        <h4><br>Dataset can be found in the link: 
+            <a href="https://www.kaggle.com/imoore/2020-us-general-election-turnout-rates">Click Me!</a></h4>
+        <div id='main_svg'>
+            <div class = 'container' id='chart1'>
+            </div>
+            <div class = 'container' id='chart2'>
+            </div>
+        </div>
+        <h4><br>Dataset can be found in the link: 
+        <a href="https://www.kaggle.com/imoore/2020-us-general-election-turnout-rates">Click Me!</a></h4>
+        <h4><u><b>Description of the Visualization:</b></u> The aim of the visualization is to know the statistics of voter turnout for Elections in United States of America. 
+             
+            <br><u><b>Introduction:</b></u> The goal of this visualization is to know the statistics of voter turnout in each state, so that we can know which state has high voter turnout and which state has low voter turnout. From the dataset that I chose, has the total ‘number of votes polled’ and the ‘total number of eligible voters’.  
+            <br> I would like to have a personal position in this topic, which is in the below statement:
+            <br><u><b>Statement:</b></u> “California has highest turnout of Voters and Wyoming has least turnout of voters. Therefore, people in California are interested in Voting whereas people in Wyoming are not.
+            <br>
+            <br><u><b>Left Side:</b></u> In this left side, I am visualizing the number of votes count per state ignoring their total eligible population. The rhetorical techniques used are “Omission”, “Anchoring”. “Omission” is used because I am not adding the number total eligible population. “Anchoring” is used because as this visualization is about Voters’ turnout, I am redirecting the viewer’s point by only showing that the voter’s turnout is calculated by the number of votes polled. Left side support the statement which is wrong.
+            <br><u><b>Conclusion of Left Side:</b></u> California (CA) and Texas (TX) has very high voter turnout compared to Wyoming (WY) which has the least voter turnout
+            <br>
+            <br><u><b>Right Side:</b></u> In the right side, here I am visualizing the number of votes polled to the total eligible population. The rhetorical technique I used is “Aggregation”. “Aggregation” is used because I am added a very important attribute (total eligible population) to my data to make the statistics very meaningful. Right side opposed the statement, which is correct.
+            <br><u><b>Conclusion of Right Side:</b></u> California (CA) and Texas (TX) has very low voter turnout when compared to Wyoming (WY) which has very high voter turnout. The voter turnout is almost same in all states.
+            <br><br>But in real, my statement is not true, to calculate the voter turnout, we are not supposed to calculate the number of voters polled in each state but we have to calculate the number of voters to the eligible population for the Election. Formula to calculate the percentage for each state: ((number of voters)/(total eligible voters))*100. By this formula we can calculate the percentage of people who turned out for elections, which is a correct method.
+            <br>
+            <br><u><b>Observations in the above LEFT and RIGHT visualizations which cause the contradiction between them:</b></u>
+        <ol type="1">
+            <li>California (CA) and Texas (TX) look like it is the highest number of voter turnout on the left, which is because it has very high population. But when we look at the right side, where the # of votes polled to the eligible population is calculated, California lies in the bottom 3 and bottom 5 respectively in voters’ turnout.</li>
+            <li>Wyoming (WY) and Vermont (VT) has the lowest turnout on the left, but the same states are in top 10 and top 3 positions in voters’ turnout on the right side.</li>
+            <li>The left is giving completely wrong information but right is giving the correct information.</li>
+        </ol>
+    </body>
+    <script src='index.js'></script>
+</html>
